@@ -10,11 +10,7 @@
     <?php 
     $curso = "ciencias da computação";
     $ano = "3ª ano";
-    echo <<< FRASE 
-        Ola eu estudo $curso e estou no $ano
-
-    FRASE;
-
+   
     
     ?>
     
