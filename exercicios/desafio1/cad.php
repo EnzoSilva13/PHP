@@ -13,18 +13,20 @@
     <section>
         <p>aqui esta o resultado:</p>
         <?php 
-            $num = $_GET ["num"] ?? "sem numero";
-            $antecessor = $_GET ["num"] - 1;
-            $sucessor = $_GET ["num"] + 1;
+            $num = $_REQUEST ["num"] ?? "sem numero";
+            $antecessor = $_REQUEST ["num"] - 1;
+            $sucessor = $_REQUEST ["num"] + 1;
 
             echo "<ul>
-                    <li> seu numero é $num<li>
-                    <li> o <strong>antecessor</strong> é $antecessor<li>
-                    <li> seu <strong>sucessor</strong> é $sucessor<li>";
+                    <li> seu numero é $num <br><br>
+                    <li> o <strong>antecessor</strong> é $antecessor<br><br>
+                    <li> seu <strong>sucessor</strong> é ". ($num + 1) . "\n <br>";
+            //aqui estao 2 jeitos que podem ser feito
             
         ?>
         <br>
-        <a href="javascript:history.go (-1)">Voltar</a>
+        <button onclick="javascript:window.location.href='index.html'">&#x2B05; Voltar</button>
+        
     </section>
     
 </body>
