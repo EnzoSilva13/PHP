@@ -14,9 +14,11 @@
     <section>
         <?php 
             $dinheiro = $_GET["numero"];
-            $converdollar = $dinheiro / 5.89;
+            $dollar = 5.88;
+            $converdollar = $dinheiro / $dollar;
             $aproximando = round("$converdollar");
-            echo "<p>Seu valor aproximado é $aproximando";
+            echo "<p>O dolar esta valendo $dollar,
+            Seu valor aproximado é $aproximando dolares.";
 
 
         ?>
