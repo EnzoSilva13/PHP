@@ -13,15 +13,19 @@
     </header>
     <section>
         <?php 
-            $dinheiro = $_GET["numero"];
+            $reais = $_GET["numero"];
             $dollar = 5.88;
-            $converdollar = $dinheiro / $dollar;
+            $converdollar = $reais / $dollar;
             $aproximando = round("$converdollar");
-            echo "<p>O dolar esta valendo $dollar,
-            Seu valor aproximado é $aproximando dolares.";
+            $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+            
+            echo "<p>o seu valor é ". numfmt_format_currency($padrao, $reais,"BRL"). " Seu valor aproximado é US\$" . $aproximando ."dolares.<br><br>";
+
+            
 
 
         ?>
+        <button onclick="javascript:history.go(-1)">Voltar</button>
         
         
         
