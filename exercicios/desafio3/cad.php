@@ -17,7 +17,8 @@
             $dollar = 5.88;
             $converdollar = $reais / $dollar;
             $aproximando = round("$converdollar");
-            $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+            
+            $padrao = numfmt_create("pt-BR", NumberFormatter::CURRENCY);
             
             echo "<p>o seu valor é ". numfmt_format_currency($padrao, $reais,"BRL"). " Seu valor aproximado é US\$" . $aproximando ."dolares.<br><br>";
 
