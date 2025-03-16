@@ -34,15 +34,10 @@
 
 
                 echo "$valor_a, $valor_b, $valor_c <br>";
-                echo "Delta =".($valor_b * $valor_b) - (4 * $valor_a * $valor_c).".";
-                
-                if ($raizpos >= 0) {
-                    echo "a raiz positiva é $raizpos";
-                } else if ($raizneg >= 0){
-                    echo "a raiz negativa é $raizneg";
-                } else {
-                    echo "a raiz nao é real";
-                }
+                echo "Delta = $delta <br>";
+                echo "a raiz positiva é $raizpos";
+                echo "a raiz negativa é $raizneg";
+                    
                 ?>
             </section>
     </main>
