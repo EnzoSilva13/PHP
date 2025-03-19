@@ -11,37 +11,30 @@
         <h1>Bhaskara</h1>
     </header>
     <main>
-        <form action="index.php" method="post">
-            <section>
+        <?php 
+        //capturando dados
+        $valor1 = $_GET['valor1']?? 0;
+        $valor2 = $_GET['valor2']?? 0;
+        ?>
+        <section>
+        <form action="<?= $_SERVER['PHP_SELF']; ?>" method="get">       
                 <label for="valor1">Valor A</label>
-                <input type="number" name="valor1" id="">
+                <input type="number" name="valor1" id="" value="<?=$valor1?>">
                 <label for="valor2">Valor B</label>
-                <input type="number" name="valor2" id="">
-                <label for="valor3">Valor C</label>
-                <input type="number" name="valor3" id="">
+                <input type="number" name="valor2" id="" value="<?=$valor2?>">
+        
                 <input type="submit" value="enviar">
-            </section>
-        </form>
-            <section>
-                <?php 
-                $valor_a = $_POST['valor1'];
-                $valor_b = $_POST['valor2'];
-                $valor_c = $_POST['valor3'];
-
-                $delta = ($valor_b * $valor_b) - (4 * $valor_a * $valor_c);
-                $raizpos = -$valor_b + sqrt($delta)/ (2 * $valor_a);
-                $raizneg = -$valor_b - sqrt($delta)/ (2 * $valor_a);
-
-
-                echo "$valor_a, $valor_b, $valor_c <br>";
-                echo "Delta = $delta <br>";
-                echo "a raiz positiva é $raizpos";
-                echo "a raiz negativa é $raizneg";
-                    
-                ?>
-            </section>
+        </form>        
+        </section>    
     </main>
-
+    <section>
+        <h1>resultado da soma</h1>
+        <?php 
+        $soma = $valor1 + $valor2;
+        echo "a soma de $valor1 e $valor2 é igual a  $soma";
+        
+        ?>
+    </section>
     
 </body>
 </html>
