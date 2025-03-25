@@ -20,9 +20,9 @@
     <main>
          <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
              <label for="anonascimento">Digite abaixo sua data de nascimento</label>
-                     <input type="number" name="anonascimento">
+                     <input type="number" name="anonascimento" min="1940" value=<?=$anonascimento?> max=<?=$anoatual?>>
              <label for="anoescolhido">Digite abaixo o ano que deseja <strong>(atualmente <?=$anoatual?>)</label >
-                     <input type="number" name="anoescolhido">
+                     <input type="number" name="anoescolhido" min="1940" value=<?=$anoescolhido ?>>
                      <input type="submit" value="enviar">
          </form>
     </main> 
