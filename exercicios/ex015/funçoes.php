@@ -59,7 +59,7 @@
             echo "<p>$nomeusuario</p>";
         }
 
-        nomeUsuario("$nome _$sobrenome");
+        nomeUsuario("$sobrenome _$nome");
 
         function somaNumeros($n1, $n2)
         {
