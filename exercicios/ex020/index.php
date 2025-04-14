@@ -17,10 +17,7 @@
         <h2>transforme m/s em km/h ou vice versa.</h2>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <input type="number" name="valor" id="">
-            <input type="submit" value="km/h">
-        </form>
-        <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-            <input type="submit" value="m/s" onclick="kmPorHora()">
+            <input type="submit" value="calcular">
         </form>
             <?php 
             function kmPorHora($valor)
@@ -28,6 +25,8 @@
                 $resultado = $valor / 3.6;
                 echo "<p>$resultado</p>";
             }
+               
+            kmPorHora($valor);
                  
             ?>
     </main>
