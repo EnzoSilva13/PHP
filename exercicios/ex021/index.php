@@ -23,6 +23,13 @@
         </form>
 
     </main>
+    <section>
+        <?php 
+        include "funçoes.php";
+
+        boasVindas();
+        ?>
+    </section>
     <footer>
 
     </footer>
