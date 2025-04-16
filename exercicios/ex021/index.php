@@ -16,8 +16,7 @@
             <input type="number" name="idade">
            
             
-            <input type="radio" name="sexofem" value="fem"> Feminino
-            <input type="radio" name="sexomas" value="mas"> Masculino
+            <input type="text" name="sexo" value="<?=$sexo?>">
 
             <input type="submit" value="descubra já">
         </form>
@@ -28,6 +27,8 @@
         include "funçoes.php";
 
         boasVindas();
+
+
         ?>
     </section>
     <footer>
