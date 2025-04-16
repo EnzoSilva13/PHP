@@ -1,6 +1,6 @@
 <?php
 
-include "index.php";
+
 
 function boasVindas()
 {
@@ -22,14 +22,15 @@ function boasVindas()
     }
     
 }
-    
-function Alistamento(){
-    
+function Alistamento()
+{
     $idade = $_GET['idade'];
-    $sexo = $_GET['sexo'];
-    
-
-    echo "$idade, $sexo"; 
-
+    if ($idade <= 17 || $idade >=65 ){
+        echo "<p> Alistamento não obrigatório </p>";
+    } else {
+        echo "<p> Alistamento obrigatório</p>";
+    }
 }
+
+
 ?>

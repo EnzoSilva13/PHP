@@ -10,13 +10,14 @@
     <header>
         <h1>Alistamento Obrigatorio</h1> 
     </header>
+    
     <main>
         <p>descubra se você ja deve alistar:</p>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
+            
+            <label for="idade">digite aqui sua idade</label>
             <input type="number" name="idade">
            
-            
-            <input type="text" name="sexo" value="<?=$sexo?>">
 
             <input type="submit" value="descubra já">
         </form>
@@ -28,7 +29,7 @@
 
         boasVindas();
 
-
+        Alistamento();
         ?>
     </section>
     <footer>
