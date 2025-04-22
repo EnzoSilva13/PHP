@@ -34,10 +34,10 @@
 
             <select name="operações" >
                 <option value="" name= ""></option>
-                <option value="" name= "som">somar</option>
-                <option value="" name= "sub">subtrair</option>
-                <option value="" name= "mul">multiplicar</option>
-                <option value="" name= "div">dividir</option>
+                <option value="1" name= "som">somar</option>
+                <option value="2" name= "sub">subtrair</option>
+                <option value="3" name= "mul">multiplicar</option>
+                <option value="4" name= "div">dividir</option>
             </select>
 
             <input type="submit" value="calcular">
@@ -46,24 +46,40 @@
     <section>
         <?php
         $calcular = $soma;
-        $resultado = 0;
-        
+        $resultado = "";
+       
+        function Soma($num1, $num2){
+            return $num1 + $num2;
+        }
+        function Subtração($num1, $num2){
+            return $num1 - $num2;
+        }
+        function Multiplicação($num1, $num2){
+            return $num1 * $num2;
+        }
+        function Divisão($num1, $num2){
+            if ($num2 != 0){
+                return $num1 / $num2;
+            }else {
+                return "Erro:Divisão por zero!";
+            }
+        }
         switch($calcular)
         {
-            case $somar:
-                $resultado = $num1 + $num2;
+            case $soma:
+                $resultado = Soma($num1, $num2);
                 echo"<p> o resultado da soma é $resultado</p>";
                 break;
             case $subtraçao:
-                $resultado = $num1 - $num2;
+                $resultado = Subtração($num1, $num2);
                 echo"<p> o resultado da subtração é $resultado</p>";
                 break;
             case $multiplicaçao:
-                $resultado = $num1 * $num2;
+                $resultado = Multiplicação($num1, $num2);
                 echo"<p> o resultado da multiplicação é $resultado</p>";
                 break;
             case $divisao:
-                $resultado = $num1 / $num2;
+                $resultado = Divisão($num1, $num2);
                 echo"<p> o resultado da divisao é $resultado</p>";
                 break;
             default:
