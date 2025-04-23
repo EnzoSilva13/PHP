@@ -9,14 +9,10 @@
     <?php 
     //valores coletados:
     
-    $num1 = $_POST['dividendo'];
-    $num2 = $_POST['divisor'];
+    $num1 = $_GET['dividendo'] ?? null;
+    $num2 = $_GET['divisor'] ?? null;
     
-    //operaçoes
-    $soma = $_POST['som'];
-    $subtraçao = $_POST['sub'];
-    $multiplicaçao = $_POST['mul'];
-    $divisao = $_POST['div'];
+    $operaçoes = $_GET['operações'] ?? null;
 
     
 
@@ -28,16 +24,16 @@
     </header>
     <main>
         <h2>digite os valores abaixo</h2>
-        <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-            <input type="number" name="dividendo" value="<?=$dividendo?>">
-            <input type="number" name="divisor" value="<?=$divisor?>">
+        <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
+            <input type="number" name="dividendo" value="<?=$num1?>">
+            <input type="number" name="divisor" value="<?=$num2?>">
 
             <select name="operações" >
-                <option value="" name= ""></option>
-                <option value="1" name= "som">somar</option>
-                <option value="2" name= "sub">subtrair</option>
-                <option value="3" name= "mul">multiplicar</option>
-                <option value="4" name= "div">dividir</option>
+                <option value="" ></option>
+                <option value="1">somar</option>
+                <option value="2">subtrair</option>
+                <option value="3">multiplicar</option>
+                <option value="4">dividir</option>
             </select>
 
             <input type="submit" value="calcular">
@@ -45,15 +41,18 @@
     </main>
     <section>
         <?php
-        $calcular = $soma;
+        
         $resultado = "";
        
+
         function Soma($num1, $num2){
             return $num1 + $num2;
         }
+
         function Subtração($num1, $num2){
             return $num1 - $num2;
         }
+
         function Multiplicação($num1, $num2){
             return $num1 * $num2;
         }
@@ -64,21 +63,23 @@
                 return "Erro:Divisão por zero!";
             }
         }
-        switch($calcular)
+
+
+        switch($operaçoes)
         {
-            case $soma:
+            case 1:
                 $resultado = Soma($num1, $num2);
                 echo"<p> o resultado da soma é $resultado</p>";
                 break;
-            case $subtraçao:
+            case 2:
                 $resultado = Subtração($num1, $num2);
                 echo"<p> o resultado da subtração é $resultado</p>";
                 break;
-            case $multiplicaçao:
+            case 3:
                 $resultado = Multiplicação($num1, $num2);
                 echo"<p> o resultado da multiplicação é $resultado</p>";
                 break;
-            case $divisao:
+            case 4:
                 $resultado = Divisão($num1, $num2);
                 echo"<p> o resultado da divisao é $resultado</p>";
                 break;
