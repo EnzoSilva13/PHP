@@ -3,41 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horario de Ponto</title>
+    <title>Banco do Povo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Relogio de ponto </h1>
+        <h1>Banco do Povo</h1>
     </header>
         <?php 
-            //dados coletados;
+            //coletando dados:
 
-         $nome = $_POST['funcionario'];
-         $entrada =$_POST['entrada'];
-         $saida =$_POST['saida'];
+            $nome =$_POST['nome'];
+            $email=$_POST['email'];
+            $senha=$_POST['senha'];
+            $confsenha=$_POST['confsenha'];
 
         ?>
     <main>
-        <p>insira seu nome e a hora de entrada e saida</p>
-    <form action="<?=$_SERVER['PHP_SELF']?>" method="post">   
-        <label for="funcionario">Nome</label>
-        <input type="text" name="funcionario" value="<?=$nome?>">
-        <label for="entrada">Horario de entrada</label>
-        <input type="time" name="entrada" value="<?=$entrada?>">
-        <label for="saida">Horario de saida</label>
-        <input type="time" name="saida" value="<?=$saida?>">
+        <p>Para entrar digite seus dados:</p>
 
-        <input type="submit" value="enviar">
-    </form>     
-        <?php 
+    <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+        <input type="text" name="nome" value="<?=$nome?>">
+        <label for="email">Email:</label>
+        <input type="text" name="email" value="<?=$email?>">
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" value="<?=$senha?>">
+        <label for="confsenha">Confirme sua senha:</label>
+        <input type="password" name="confsenha" value="<?=$confsenha?>">
 
-        include "funcionarios.php";
-        //listando funcionarios:
-        
-        new Funcionario = $nome;
-        ?>
+        <input type="submit" value="entrar">
+    </form>    
     </main>
-    
+        <?php 
+        //criando a função de validação:
+        
+        function validarDados(){
+            if ($nome != $nome1 && $nome != $nome2 && $nome != $nome3) {
+                return $nomefinal;
+            }
+           
+        }   
+        ?>
+    <section>
+    <?php 
+        echo $nomefinal;
+        
+        ?>
+    </section>
+    <footer>
+        
+    </footer>
 </body>
 </html>
